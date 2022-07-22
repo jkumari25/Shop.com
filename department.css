@@ -1,0 +1,134 @@
+#depart-head{
+    width:80%;
+    height:auto;
+    margin:auto;
+    margin-top:30px;
+}
+#depart-head>img{
+    width:100%;
+    margin:auto;
+}
+#depart-mid{
+    display:grid;
+    width:80%;
+    height:auto;
+    grid-template-columns:repeat(4,1fr);
+    grid-template-rows: repeat(7,150px);
+    gap:30px;
+    margin:auto;
+    margin-top:40px;
+    /* margin-left:180px; */
+    /* border:1px solid red; */
+}
+#depart-mid>div{
+    height:auto;
+    /* border:1px solid blue; */
+}
+.dep1{
+    display:flex;
+}
+.dep1>div>p{
+    font-size:13px;
+    line-height:1px;
+}
+.dep1>div{
+   height:100%;
+   width:auto;
+   /* border:1px solid green; */
+}
+.dep1>div>img{
+    width:80%;
+    margin:auto;
+}
+/*footer Css*/
+
+#footer{
+    display:flex;
+    height:auto;
+    width:100%;
+    margin-top:30px;
+    background-color:rgb(98, 121, 145) ;
+}
+#footer>div{
+    height:auto;
+    width:15%;
+    margin:5px;
+    color:#ddd;
+}
+input{
+    height:30px;
+    width:30%;
+    margin:15px;
+    border:0px;
+    border-radius: 5px;
+}
+button{
+    height:32px;
+    margin:15px;
+    margin-left:-60px;
+    border:0px;
+    border-radius:5px;
+}
+button:hover{
+  background-color:black;
+  color:white; 
+}
+#footer1{
+    float:left;
+    display:flex;
+    height:auto;
+    width:100%;
+    background-color:rgb(98, 121, 145) ; 
+}
+#footer1>div{
+    height:100%;
+    width:auto;
+    font-weight: 700;
+    font-size:.75rem;
+    line-height:1.75em;
+    margin-left:50px;
+    color:#fff;
+    text-align:left;
+    margin: 0.4em 2px 0.4em 2px;
+    cursor:pointer;
+}
+.vertical-line{
+    border-left:3px solid #ddd;
+    height:200px;
+}
+#footer2>p{
+    text-align:left;
+}
+#footer3{
+    display:flex;
+    height:auto;
+    width:40%;
+    margin:auto;
+    align-content:center;
+    justify-content:center;
+    gap:5px;
+    /* border:1px solid red; */
+
+}
+#footer3>div{
+    height:100%;
+    width:8%;
+    /* border:1px solid blue; */
+}
+#footer3>div> img{
+    width:100%;
+    margin:auto;
+}
+#footer4{
+    height:auto;
+    width:8%;
+    margin:auto;
+    margin-top:5px;
+}
+#footer4>img{
+    width:100%;
+    margin:auto;
+}
+a{
+    text-decoration:none;
+}
