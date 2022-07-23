@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    <link rel="Stylesheet" href="signup.css"/>
+</head>
+<body>
+     <div class="black">
+        <p>1st time customers save 25% on SHOP.COM exclusive brands using code FIRST25OFF.Max$25 discount. Terms Apply. <span>Click Here</span></p>
+     </div>
+     <div id="navbar">
+       <div id="left">
+         <div><img src="https://img.shop.com/Image/resources/logos/shop-logo-us-gold.svg"/></div>
+         <div><a href="home.html"><h5>Exclusive Brand</h5></a></div>
+         <div><a href="Stores.html"><h5>Stores</h5></a></div>
+         <div><a href="deals.com"><h5>Deals</h5></a></div>
+         <div><a href="shoptravel.com"><h5>Shop Travel</h5></a></div>
+         <div><a href="department.html"><h5>Departments</h5></a></div>
+         <div><a href="shopbuddy.html"><h5>ShopBuddy</h5></a></div>
+         <div><a href="shoplocal.com"><h5>Shop Local</h5></a></div>
+       </div>
+       <div id="right">
+         <div>
+           <img src="https://img.shop.com/Image/resources/images/icon-account-circle-24px.svg"/>
+           <a href="signup.html"><h5>Sign up</h5></a>
+         </div>
+         <div>
+           <img src="https://img.shop.com/Image/resources/images/icon-orders-24px.svg" />
+           <a href="signin.html"><h5>Sign in</h5></a>
+         </div>
+         <div>
+           <img src="https://img.shop.com/Image/resources/images/icon-shopping-cart-24px.svg" />
+           <a href="cart.html"><h5>Cart</h5></a>
+         </div>
+       </div>
+     </div>
+     <div class="main"></div>
+
+    <!-- signup box -->
+    <div id="signup">
+        <h1>Sign up</h1>
+        <form action="">
+            <label for="Name">Name</label>
+            <input id="name" type="text" placeholder="Enter name">
+            <label for="">Mail id</label>
+            <input id="email" type="email" placeholder="Enter mail id">
+            <label for="">Password</label>
+            <input id="password" type="tel" placeholder="enter Password">
+            <input type="submit" value="Sign up" />
+            <p>if already have an account then   <a href="signin.html">signin</a></p>
+        </form>
+    </div>
+    <div id="footer">
+        <div>
+          <div>
+            <h3>Get Email Deals & Earn Cashback</h3>
+          </div>
+        </div>
+        <input placeholder="Enter email" type="email" name="email" />
+        <button>Sign in</button>
+        </div>
+        <div id="footer1">
+          <div class="vertical-line">About Us</div>
+          <div class="vertical-line">Help</div>
+          <div  class="vertical-line">Accesibility Statement</div>
+          <div  class="vertical-line">Contact Us</div>
+          <div  class="vertical-line">Partner With Us</div>
+          <div  class="vertical-line">Services</div>
+          <div  class="vertical-line">Country/Region</div>
+          <div  class="vertical-line">Contact</div>
+          <div  class="vertical-line">Own Your Own Shop Site</div>
+        </div>
+      </div>
+      <div id="footer2">
+        <p>© 1997-2022 Market America, Inc. or its affiliates. All other designated trademarks, copyrights, and brands are the property of their respective owners.</p>
+        <p>Only Customers will receive cashback on qualifying purchases. UnFranchise Owners/Shop Consultants will receive increased IBV instead of</p>
+        <p>cashback on qualifying purchases</p>
+      </div> 
+      <div id="footer3">
+        <div>
+          <img src="https://www.shop.com/feo-cdn/7/F/BIyWLz__s.webp" alt=""/>
+        </div>
+        <div>
+          <img src="https://www.shop.com/feo-cdn/z/b/qA5FJf0J4.webp" alt=""/>
+        </div>
+        <div>
+          <img src="https://www.shop.com/feo-cdn/m/S/eK8gl_JjY.webp" alt=""/>
+        </div>
+        <div>
+          <img src="https://www.shop.com/feo-cdn/0/q/U9W4qM8Kw.webp" alt=""/>
+        </div>
+        <div>
+          <img src="https://www.shop.com/feo-cdn/o/0/XUDdhleMQ.webp" alt=""/>
+        </div>
+        <div>
+          <img src="https://www.shop.com/feo-cdn/u/P/cg2zbaz_s.webp" alt=""/>
+        </div>
+        <div>
+          <img src="https://www.shop.com/feo-cdn/K/F/E44Pe49Qs.webp" alt=""/>
+        </div>
+        <div>
+          <img src="https://www.shop.com/feo-cdn/R/r/IzPqj3z1E.webp" alt=""/>
+        </div>
+      </div>
+      <div id="footer4">
+        <img src="https://www.shop.com/feo-cdn/K/F/E44Pe49Qs.webp" alt=""/>
+      </div>
+</body>
+</html>
+<script>
+    document.querySelector("form").addEventListener("submit", signupdata);
+    let form=document.querySelector("form");
+    let signuparr=JSON.parse(localStorage.getItem("userdata"))||[];
+    
+    function signupdata(){
+        event.preventDefault();
+        let data={
+            name:form.name.value,
+            mail:form.email.value,
+            password:form.password.value
+        }
+        if(checkemail(data.mail)==true){
+            signuparr.push(data)
+            localStorage.setItem("userdata",JSON.stringify(signuparr))
+            alert("Sign up Successful");
+            window.location.href="signin.html"
+        }else{
+            alert("Account Already Exists");
+            window.location.href="signin.html"
+        }
+        //console.log(signuparr)
+        //window.location.reload()
+    }
+    function checkemail(email){
+        let filtered=signuparr.filter(function(elem){
+            return email==elem.mail;
+        })
+        if(filtered.length>0){
+            return false;
+        }else{
+            return true;
+        }
+    }
+</script> 
+</body>
+</html>
